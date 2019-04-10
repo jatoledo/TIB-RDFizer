@@ -1,4 +1,4 @@
-# RDFizer
+# SDM-RDFizer
 
 Create the Docker Container
 
