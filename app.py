@@ -10,7 +10,7 @@ def index():
 
 @app.route('/graph_creation/<path:config_file>', methods=['POST'])
 def rdfgraph(config_file):
-	os.system("python3 rdfizer/rdfizer.py -m /" + config_file)
+	os.system("python3 rdfizer/run_rdfizer.py -m /" + config_file)
 	return "New RDF Graph has been created"
 
 if __name__ == "__main__":

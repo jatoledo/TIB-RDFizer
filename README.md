@@ -1,5 +1,6 @@
 # SDM-RDFizer
 
+
 Create the Docker Container
 
 ```
@@ -9,13 +10,12 @@ docker build -t rdfizer .
 Run the Application
 
 ```
-docker run -p 4000:80 rdfizer
+docker run -d --name rdfizer rdfizer
 ```
 
-Send a POST request with the configuration file to RDFizer the file
-
+Execute mapping
 ```
-localhost:4000/graph_creation/path/to/config/file
+docker exec -it rdfizer /app/run.sh /app/mappings/config.ini
 ```
 
 ## Example of a Config file

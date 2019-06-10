@@ -8,6 +8,8 @@ WORKDIR /app
 ADD . /app
 
 # Install any needed packages specified in requirements.txt
+RUN pip install mysql-connector-python
+RUN pip install rdflib
 RUN pip install --trusted-host pypi.python.org -r requirements.txt
 
 # Make port 80 available to the world outside this container
@@ -17,4 +19,4 @@ EXPOSE 80
 ENV NAME RDFizer
 
 # Run app.py when the container launches
-CMD ["python3", "app.py"]
+CMD ["tail", "-f", "/dev/null"]
